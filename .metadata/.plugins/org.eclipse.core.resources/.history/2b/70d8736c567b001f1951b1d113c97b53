@@ -1,0 +1,41 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Sortnum {
+    
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Ask the user for the size of the array
+        System.out.print("Enter the number of elements in the array: ");
+        int size = input.nextInt();
+        double[] array = new double[size];
+
+        // Input the elements of the array
+        System.out.println("Enter " + size + " numbers:");
+        for (int i = 0; i < size; i++) {
+            array[i] = input.nextDouble();
+        }
+
+        // Sort the array
+        Arrays.sort(array);
+
+        // Display the sorted array
+        System.out.println("Sorted array: " + Arrays.toString(array));
+
+        // Calculate the sum of the array
+        double sum = 0;
+        for (double num : array) {
+            sum += num;
+        }
+
+        // Calculate the average of the array
+        double average = sum / size;
+
+        // Display the sum and average
+        System.out.println("Sum of array elements: " + sum);
+        System.out.println("Average of array elements: " + average);
+        
+        input.close();
+    }
+}
